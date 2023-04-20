@@ -39,7 +39,7 @@ fetch('/api/fetchp?type=' + type + '&time=' + now)
 
   
   if (resCode == 200) {
-    popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Your proxy:</h3><PRE>${resData}</PRE><br><p>You can claim more in 24 hours.</p>`);
+    popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Your proxy:</h3><PRE>${resData}</PRE><br><p>TIP: You can only claim 2 proxies per day.</p>`);
   }
     if (resCode != 200) {
       popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>${resData}</pre>`);
