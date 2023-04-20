@@ -10,7 +10,7 @@ app.use('/', express.static(path.join(__dirname, 'front')));
 
 const apiLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
-  max: 1, // limit each IP to 1 requests per windowMs
+  max: 2, // limit each IP to 1 requests per windowMs
   message: "You have ran out of uses for today. Please wait..."
 });
 
@@ -21,7 +21,7 @@ app.get('/api/fetchp', apiLimiter, (req, res) => {
     const now = Math.floor(Date.now() / 1000);
     const time = parseInt(req.query.time);
 
-    if (isNaN(time) ||  now - time > 30) {
+    if (isNaN(time) || now - time > 30) {
       res.status(400).send("Request expired. TIP: Requests only last for 30 seconds.");
       return;
     }
