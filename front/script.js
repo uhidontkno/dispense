@@ -17,8 +17,10 @@ const type = dropdown.value;
 var resData= "";
   var now = Date.now();
    if (type == "") {
-      popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>You haven't picked anything in the proxy dropdown!</pre>`);
      
+      popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>You haven't picked anything in the proxy dropdown!</pre>`);
+       var audio = new Audio('assets/positive/p2.mp3');
+       audio.play();
     } else {
 fetch('/api/fetchp?type=' + type + '&time=' + now)
     .then(response => {
