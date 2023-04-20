@@ -10,7 +10,7 @@ app.use('/', express.static(path.join(__dirname, 'front')));
 
 const apiLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
-  max: 2, // limit each IP to 1 requests per windowMs
+  max: 2, 
   message: "You have ran out of uses for today. Please wait..."
 });
 

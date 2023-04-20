@@ -41,16 +41,18 @@ fetch('/api/fetchp?type=' + type + '&time=' + now)
 
   
   if (resCode == 200) {
-    var raudio = Math.floor(Math.random()*5);
+   
+    popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Your proxy:</h3><PRE>${resData}</PRE><br><p>TIP: You can only claim 2 proxies per day.</p>`);
+     var raudio = Math.floor(Math.random()*5);
       var audio = new Audio(`assets/positive/p${raudio}.mp3`);
      audio.play();
-    popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Your proxy:</h3><PRE>${resData}</PRE><br><p>TIP: You can only claim 2 proxies per day.</p>`);
   }
     if (resCode != 200) {
-      var raudio = Math.floor(Math.random()*5);
+     
+      popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>${resData}</pre>`);
+       var raudio = Math.floor(Math.random()*5);
       var audio = new Audio(`assets/negative/n${raudio}.mp3`);
      audio.play();
-      popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>${resData}</pre>`);
     }
     var txt = document.querySelector(".dtxt-d");
     var btn = document.querySelector(".btn");

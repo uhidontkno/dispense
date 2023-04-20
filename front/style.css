@@ -1,6 +1,12 @@
-body {
-  background-color: rgb(192,255,192);
+html {
+ 
+  background: url("assets/bgtile.png");
+  background-size:64px;
+  width:100%;
+  height:100%;
+   background-color: rgb(192,255,192);
 }
+body {background: rgba(0,0,0,0.5)}
 disp {
   width:256px; height:256px; background-image:url("assets/disp.png"); display:block; background-size:contain;
 }
