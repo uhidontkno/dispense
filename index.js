@@ -38,7 +38,7 @@ app.get('/api/fetchp', apiLimiter, (req, res) => {
     res.send(randomEntry);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Internal server error");
+    res.status(500).send(`Internal server error.  Debugging info: ${err} `);
   }
 });
 // Start the server
