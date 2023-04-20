@@ -85,7 +85,7 @@ button[disabled]:hover{
 }
 .popup button {
   width:100%;
-}
+} 
 select{
   position:fixed;
   bottom:90px;
