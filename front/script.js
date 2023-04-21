@@ -157,21 +157,54 @@ document.addEventListener('keydown', function(e) {
 
     // if the last key is reached, activate cheats
     if (konamiCodePosition == konamiCode.length) {
-      activateCheats();
+      triggerfunny();
       konamiCodePosition = 0;
     }
   } else {
     konamiCodePosition = 0;
   }
 });
+let done = 0
+    let taudio = new Audio('assets/click.mp3');
+async function type(text, speed, element) {
+  
+  for (let i = 0; i < text.length; i++) {
+    
+    const chr = text.charAt(i);
+    if (chr === 'σ') {
+      element.innerHTML += '<br>';
+    } else if (chr === 'τ') {} else {
+      taudio.play();
+      element.innerHTML += chr;
+    }
+    await new Promise(resolve => setTimeout(resolve, speed));
+  }
+}
 
-function activateCheats() {
 
-  alert("[ERR]: A critical error has occurred. Dispenser cannot operate at this moment.")
-  document.write("<video style='width:100%;height:100%;' autoplay controls  src='https://files.catbox.moe/9e1ic6.mp4'></video>") // heheheha
+    
+// https://files.catbox.moe/9e1ic6.mp4
+async function triggerfunny() {
+
+  alert("CHEAT MODE ACTIVATED!!1")
+  document.write(`<style>* {color-scheme:dark;font-family:monospace;} body {width:100%;height:100%;background-color:#0f1f0f;} p {font-family:monospace;font-size:18px;color:yellow;}</style><p id='fartpod'>CHEAT MODE ACTIVATED!!1<br></p>`) // initate rickroll
+
+  setTimeout(async () => {
+    ele = document.getElementById('fartpod');
+await type("Activating cheats", 30,ele);
+await type("...", 200,ele);
+await type("..........σ", 20,ele);
+
+  await type("Successfully activated cheats!σ", 30,ele);  
+await type("Running Cheat 1 [Dump all]:σLog:σ ", 3,ele); 
+await type("Dττττττττττττumττττττττττττping... σττττττττττττττττττττττττττττττττττττττττττττττττττLink 1:τττ", 10,ele); 
+    await type("https://w ", 50,ele); 
+    ele.innerHTML = "lol get rickrolled lmao! you fell for it lol lol lol get rekt. how did you fall for it?";
+    ele.innerHTML += `<video style='width:100%;height:100%;position:fixed;top:2px;left:2px;background:#000;' src="https://files.catbox.moe/9e1ic6.mp4" autoplay controls></video>`;
+  }, 1500)
+
 
 }
 if (r == 69 || feulz == 1) {
-  alert("[ERR]: A critical error has occurred. Dispenser cannot operate at this moment.")
-  document.write("<video style='width:100%;height:100%;' autoplay controls src='https://files.catbox.moe/9e1ic6.mp4'></video>") // heheheha
+  triggerfunny();
 }
