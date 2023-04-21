@@ -1,66 +1,66 @@
 function disp() {
   const dropdown = document.getElementById('proxy');
-const type = dropdown.value;
+  const type = dropdown.value;
   if (type != "") {
-  var btn = document.querySelector(".btn");
-  var audio = new Audio('assets/click.mp3');
-  
-  audio.play();
-  btn.disabled = true;
-  btn.innerText = "..."
-  setTimeout(() => {
-    var txt = document.querySelector(".dtxt");
-    txt.className = "dtxt-d";
-  },100)
-  }
-    var resCode = 0;
-var resData= "";
-  var now = Date.now();
-   if (type == "") {
-     
-      popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>You haven't picked anything in the proxy dropdown!</pre>`);
-       var audio = new Audio('assets/positive/p2.mp3');
-       audio.play();
-    } else {
-fetch('/api/fetchp?type=' + type + '&time=' + now)
-    .then(response => {
-    console.log('Response status code:', response.status);
-        resCode=response.status;
-    return response.text();
-  })
-  .then(data => {
-    console.log('Response data:', data);
-      resData = data;
-  })
-  .catch(error => {
-    console.error('Fetch error:', error);
-  });
-   
-  setTimeout(() => {
-
-
-  
-  if (resCode == 200) {
-   
-    popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Your proxy:</h3><PRE>${resData}</PRE><br><p>TIP: You can only claim 2 proxies per day.</p>`);
-     var raudio = Math.floor(Math.random()*5);
-      var audio = new Audio(`assets/positive/p${raudio}.mp3`);
-     audio.play();
-  }
-    if (resCode != 200) {
-     
-      popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>${resData}</pre>`);
-       var raudio = Math.floor(Math.random()*5);
-      var audio = new Audio(`assets/negative/n${raudio}.mp3`);
-     audio.play();
-    }
-    var txt = document.querySelector(".dtxt-d");
     var btn = document.querySelector(".btn");
+    var audio = new Audio('assets/click.mp3');
+
+    audio.play();
+    btn.disabled = true;
+    btn.innerText = "..."
+    setTimeout(() => {
+      var txt = document.querySelector(".dtxt");
+      txt.className = "dtxt-d";
+    }, 100)
+  }
+  var resCode = 0;
+  var resData = "";
+  var now = Date.now();
+  if (type == "") {
+
+    popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>You haven't picked anything in the proxy dropdown!</pre>`);
+    var audio = new Audio('assets/positive/p2.mp3');
+    audio.play();
+  } else {
+    fetch('/api/fetchp?type=' + type + '&time=' + now)
+      .then(response => {
+        console.log('Response status code:', response.status);
+        resCode = response.status;
+        return response.text();
+      })
+      .then(data => {
+        console.log('Response data:', data);
+        resData = data;
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+      });
+
+    setTimeout(() => {
+
+
+
+      if (resCode == 200) {
+
+        popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Your proxy:</h3><PRE>${resData}</PRE><br><p>TIP: You can only claim 2 proxies per day.</p>`);
+        var raudio = Math.floor(Math.random() * 5);
+        var audio = new Audio(`assets/positive/p${raudio}.mp3`);
+        audio.play();
+      }
+      if (resCode != 200) {
+
+        popup(`<img src="assets/Chest.gif" style="width:100%;height:128px; object-fit: contain;"></img><h3 style="text-align:center;">Error</h3><p>An error has occurred. More details:<br></p><pre>${resData}</pre>`);
+        var raudio = Math.floor(Math.random() * 5);
+        var audio = new Audio(`assets/negative/n${raudio}.mp3`);
+        audio.play();
+      }
+      var txt = document.querySelector(".dtxt-d");
+      var btn = document.querySelector(".btn");
       btn.disabled = false;
-    txt.className = "dtxt";
-    btn.innerText = "Dispense!"
-  },1000)
-   }
+      txt.className = "dtxt";
+      btn.innerText = "Dispense!"
+    }, 1000)
+  }
 }
 function popup(txt) {
   btnclose();
@@ -69,7 +69,7 @@ function popup(txt) {
 }
 function btnclose() {
   var b = document.querySelector('.popup');
-  if (b != null) {b.remove();}
+  if (b != null) { b.remove(); }
 }
 
 
@@ -118,7 +118,7 @@ function btnclose() {
 
 
 
-r = Math.floor(Math.random * 69);
+r = Math.floor(Math.random() * 69);
 var dateObj = new Date();
 var month = dateObj.getUTCMonth() + 1; //months from 1-12
 var day = dateObj.getUTCDate();
@@ -168,10 +168,10 @@ document.addEventListener('keydown', function(e) {
 function activateCheats() {
 
   alert("[ERR]: A critical error has occurred. Dispenser cannot operate at this moment.")
-  document.write("<video style='width:100%;height:100%;' autoplay controls  src='assets/a.mp4'></video>") // heheheha
+  document.write("<video style='width:100%;height:100%;' autoplay controls  src='https://files.catbox.moe/9e1ic6.mp4'></video>") // heheheha
 
 }
 if (r == 69 || feulz == 1) {
   alert("[ERR]: A critical error has occurred. Dispenser cannot operate at this moment.")
-   document.write("<video style='width:100%;height:100%;' autoplay controls src='assets/a.mp4'></video>") // heheheha
+  document.write("<video style='width:100%;height:100%;' autoplay controls src='https://files.catbox.moe/9e1ic6.mp4'></video>") // heheheha
 }
