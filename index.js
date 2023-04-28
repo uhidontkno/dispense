@@ -9,8 +9,8 @@ const port = process.env.PORT || 3000;
 app.use('/', express.static(path.join(__dirname, 'front')));
 
 const apiLimiter = rateLimit({
-  windowMs: 24 * 60 * 60 * 1000, // 24 hours
-  max: 2, 
+  windowMs: 20 * 60 * 60 * 1000, // 20 hours
+  max: 4, 
   message: "You have ran out of uses for today. Please wait..."
 });
 
